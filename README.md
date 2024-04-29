@@ -1,1 +1,1 @@
-eIngressos é um sistema de ingressos de cinema online criado em ASP.NET MVC e utiliza banco de dados SQL com EF Core para armazenar informações sobre atores, filmes, produtores, locais, pedidos e assim por diante (operações típicas de CRUD).
+eIngressos é um sistema de ingressos de cinema online criado em ASP.NET MVC e utiliza banco de dados SQL com EF Core para armazenar informações sobre atores, filmes, sessoes, pedidos e assim por diante (operações típicas de CRUD).
