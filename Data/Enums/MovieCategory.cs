@@ -2,7 +2,7 @@
 
 namespace Ing.Data.Enums
 {
-    public enum FilmeCategoria
+    public enum MovieCategory
     {
         //Start index of 1 so when a movie is assigned a category, they match
         Action = 1,

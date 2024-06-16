@@ -9,30 +9,31 @@ using System.Threading.Tasks;
 
 namespace Ing.Models
 {
-    public class Filmes
+    public class Movie
     {
         [Key]
-        public int FilmeId { get; set; }
-        public string Nome { get; set; }
+        public int MovieId { get; set; }
+
+        [Display(Name = "Título")]
+        [Required]
+        public string Title { get; set; }
         
         [Display(Name = "Descrição")]
         [Required]
-        public string Descricao { get; set; }
+        public string Description { get; set; }
         
-        [Display(Name = "Preço")]
-        [Required]
-        public double Preco { get; set; }
-        
-        public string ImageURL { get; set; }
+        [Display(Name = "Poster")]
+        public string? ImageURL { get; set; }// o ? torna o preenchimento facultativo
         
         [Display(Name = "Duração (Minutos)")]
         [Required]
-        public int Duracao { get; set; }
+        public int Duration { get; set; }
         
         [Display(Name = "Classificação Etária")]
         [Required]
-        public int ClassificacaoEtaria { get; set; }
-        public string Produtor { get; set; }
+        public int AgeRating { get; set; }
+
+        public string Producer { get; set; }
         
         
         /*Enum tipo filme categoria
@@ -41,25 +42,21 @@ namespace Ing.Models
         */
         [Display(Name = "Categoria")]
         [Required]
-        public FilmeCategoria FilmeCategoria { get; set; }
+        public MovieCategory Category { get; set; }
         
         [Display(Name = "Data de adição")]
         [Required]
-        public DateTime DataAdd { get; set; }
+        public DateTime DateAdd { get; set; }
 
         [Display(Name = "Em exibição?")]
         [Required]
-        public bool EmExib { get; set; }
+        public bool InExib { get; set; }
         
         //Relacionamento entre tabelas
         
-        //Actor e Filmes
-        public List<Actor_Filme> Actores_Filmes { get; set; }
-
-        //Sessao
-        public int SessaoId { get; set; }
-        [ForeignKey("SessaoId")]
-        public Sessao Sessao { get; set; }
+        //Actor e Movie
+        [Display(Name ="Actores")]
+        public ICollection<ActorMovie> ActorsMovies { get; set; }
 
         
     }

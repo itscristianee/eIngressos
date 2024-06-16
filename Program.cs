@@ -40,6 +40,12 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
+
+//Seed database
+ //           AppDbInitializer.Seed(app);
+           // AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+
 
 app.Run();

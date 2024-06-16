@@ -26,24 +26,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/cristiane/VSCodeProjects/Ing
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/cristiane/VSCodeProjects/Ing/Views/Actor/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvQ3JlYXRlLmNzaHRtbA==
+[/Users/cristiane/VSCodeProjects/Ing/Views/Actors/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3JzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cristiane/VSCodeProjects/Ing/Views/Actor/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvRGVsZXRlLmNzaHRtbA==
+[/Users/cristiane/VSCodeProjects/Ing/Views/Actors/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3JzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cristiane/VSCodeProjects/Ing/Views/Actor/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvRGV0YWlscy5jc2h0bWw=
+[/Users/cristiane/VSCodeProjects/Ing/Views/Actors/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3JzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cristiane/VSCodeProjects/Ing/Views/Actor/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvRWRpdC5jc2h0bWw=
+[/Users/cristiane/VSCodeProjects/Ing/Views/Actors/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3JzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cristiane/VSCodeProjects/Ing/Views/Actor/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvSW5kZXguY3NodG1s
+[/Users/cristiane/VSCodeProjects/Ing/Views/Actors/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3JzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/cristiane/VSCodeProjects/Ing/Views/Home/Index.cshtml]
@@ -52,6 +52,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/cristiane/VSCodeProjects/Ing/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Movies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Movies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Movies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Movies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Movies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/cristiane/VSCodeProjects/Ing/Views/Shared/Error.cshtml]
