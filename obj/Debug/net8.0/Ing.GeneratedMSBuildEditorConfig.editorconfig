@@ -54,6 +54,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/cristiane/VSCodeProjects/Ing/Views/Mo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW8vQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Mo/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW8vRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Mo/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW8vRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Mo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW8vRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cristiane/VSCodeProjects/Ing/Views/Mo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW8vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/cristiane/VSCodeProjects/Ing/Views/Movies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

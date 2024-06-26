@@ -27,7 +27,14 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20240611202114_InitialCreate.cs" />
     <Compile Remove="Data\Migrations\20240611202114_InitialCreate.Designer.cs" />
-    <Compile Remove="Controllers\MoviesController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Mo\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Mo\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Mo\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Mo\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Mo\Index.cshtml" />
   </ItemGroup>
 
 </Project>
