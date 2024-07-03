@@ -25,8 +25,10 @@ public class Session
     //Movie e sessao
     [Display(Name = "Movie")]
     [ForeignKey(nameof(Movie))]
-    public int FilmeId { get; set; }
+    public int MovieId { get; set; }
     public Movie Movie { get; set; }
+    
+    public ICollection<Ticket> Tickets { get; set; }
 
 
 }

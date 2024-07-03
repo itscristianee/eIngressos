@@ -10,7 +10,8 @@ namespace Ing.Models
         
         public int ActorId { get; set; }
         
-        [Required(ErrorMessage = "0 {0} é de preenchimento obrigatório!")]  // Campo obrigatório
+       [Required(ErrorMessage = "O {0} é de preenchimento obrigatório")]
+        [StringLength(60)]
         [Display(Name = "Nome")]
         public string Name { get; set; }
 

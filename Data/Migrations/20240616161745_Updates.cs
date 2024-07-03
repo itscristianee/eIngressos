@@ -16,11 +16,11 @@ namespace Ing.Migrations
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Funcionarios",
-                table: "Funcionarios");
+                table: "Usuarios");
 
             migrationBuilder.DropColumn(
                 name: "FuncId",
-                table: "Funcionarios");
+                table: "Usuarios");
 
             migrationBuilder.RenameColumn(
                 name: "Titulo",
@@ -69,17 +69,17 @@ namespace Ing.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "Tipo",
-                table: "Funcionarios",
+                table: "Usuarios",
                 newName: "Type");
 
             migrationBuilder.RenameColumn(
                 name: "Telemovel",
-                table: "Funcionarios",
+                table: "Usuarios",
                 newName: "Phone");
 
             migrationBuilder.RenameColumn(
                 name: "DataNasc",
-                table: "Funcionarios",
+                table: "Usuarios",
                 newName: "BirthDate");
 
             migrationBuilder.RenameColumn(
@@ -109,7 +109,7 @@ namespace Ing.Migrations
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Funcionarios",
-                table: "Funcionarios",
+                table: "Usuarios",
                 column: "NIF");
 
             migrationBuilder.AddForeignKey(
@@ -130,7 +130,7 @@ namespace Ing.Migrations
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Funcionarios",
-                table: "Funcionarios");
+                table: "Usuarios");
 
             migrationBuilder.RenameColumn(
                 name: "Title",
@@ -179,17 +179,17 @@ namespace Ing.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "Type",
-                table: "Funcionarios",
+                table: "Usuarios",
                 newName: "Tipo");
 
             migrationBuilder.RenameColumn(
                 name: "Phone",
-                table: "Funcionarios",
+                table: "Usuarios",
                 newName: "Telemovel");
 
             migrationBuilder.RenameColumn(
                 name: "BirthDate",
-                table: "Funcionarios",
+                table: "Usuarios",
                 newName: "DataNasc");
 
             migrationBuilder.RenameColumn(
@@ -219,7 +219,7 @@ namespace Ing.Migrations
 
             migrationBuilder.AddColumn<int>(
                 name: "FuncId",
-                table: "Funcionarios",
+                table: "Usuarios",
                 type: "int",
                 nullable: false,
                 defaultValue: 0)
@@ -227,7 +227,7 @@ namespace Ing.Migrations
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Funcionarios",
-                table: "Funcionarios",
+                table: "Usuarios",
                 column: "FuncId");
 
             migrationBuilder.AddForeignKey(

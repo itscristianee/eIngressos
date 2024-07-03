@@ -2,7 +2,7 @@
 
 namespace Ing.Data.Enums
 {
-    public enum FuncType
+    public enum UserType
     {
         Vendedor,
         Admin

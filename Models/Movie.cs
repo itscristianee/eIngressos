@@ -44,14 +44,19 @@ namespace Ing.Models
         [Required]
         public MovieCategory Category { get; set; }
         
-        [Display(Name = "Data de adição")]
+        [Display(Name = "Inicio de exibição")]
         [Required]
-        public DateTime DateAdd { get; set; }
-
-        [Display(Name = "Em exibição?")]
-        [Required]
-        public bool InExib { get; set; }
+        public DateTime StartDate { get; set; }
         
+
+        [Display(Name = "Fim de exibição?")]
+        [Required]
+        public DateTime EndDate { get; set; }
+        
+        [Display(Name = "Preço")]
+        [Required(ErrorMessage = "O {0} é obrigatória.")]
+        [RegularExpression("[0-9]+[.,]?[0-9]{0,2}", ErrorMessage = "Digitos numéricos separados por , ou .")]
+        public double Price { get; set; }
         //Relacionamento entre tabelas
         
         //Actor e Movie

@@ -1,33 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Ing.Models;
-
-public class Ticket
+namespace Ing.Models
 {
-    [Key]
+    public class Ticket
+    {
+        [Key]
+        public int Id { get; set; }
 
-    public int IngressoId { get; set; }
+        public int Amount { get; set; }
+        public double Price { get; set; }
 
-    [Display(Name = "Preço")]
-    [Required(ErrorMessage = "O {0} é obrigatória.")]
-    [RegularExpression("[0-9]+[.,]?[0-9]{0,2}", ErrorMessage = "Digitos numéricos separados por , ou .")]
-    public decimal Price { get; set; }
+        public int MovieId { get; set; }
+        [ForeignKey("MovieId")]
+        public Movie Movie { get; set; }
 
-    [Display(Name = "Hora de entrada")]
-    public TimeOnly EntranceTime { get; set; }
-    
-    [Display(Name = "Data da compra")]
-    [DataType(DataType.Date)] // informa a View de como deve tratar este atributo
-      [DisplayFormat(ApplyFormatInEditMode = true,
-                     DataFormatString = "{0:dd-MM-yyyy}")]
-    public DateOnly DatePurchase { get; set; }
-    
-    //Relacionamento entre tabelas
-
-    //Session e Ticket
-    [Display(Name = "Sessões")]
-    [ForeignKey(nameof(Session))]
-    public int SessaoId { get; set; }  // Chave primária única para cada sessão
-    public Session Session { get; set; }
+        public int OrderId { get; set; }
+        [ForeignKey("OrderId")]
+        public Order Order { get; set; }
+        
+        [Display(Name = "Sessões")]
+        public int SessaoId { get; set; }
+        [ForeignKey("SessaoId")]
+        public Session Session { get; set; }
+       
+        [Display(Name = "Data da compra")]
+        [DataType(DataType.Date)] 
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        public DateOnly DatePurchase { get; set; }
+    }
 }

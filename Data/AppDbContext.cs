@@ -20,7 +20,12 @@ namespace Ing.Data
     
             modelBuilder.Entity<ActorMovie>().HasOne(m => m.Movie).WithMany(am => am.ActorsMovies).HasForeignKey(m => m.MovieId);
             modelBuilder.Entity<ActorMovie>().HasOne(m => m.Actor).WithMany(am => am.ActorsMovies).HasForeignKey(m => m.ActorId);
-    
+            
+            modelBuilder.Entity<Person>()
+                .HasDiscriminator<string>("Discriminator")
+                .HasValue<Client>("Client")
+                .HasValue<Employee>("Employee");
+            
             base.OnModelCreating(modelBuilder);
         }
 		
@@ -29,6 +34,12 @@ namespace Ing.Data
         public DbSet<ActorMovie> ActorsMovies { get; set; }
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Funcionarios> Funcionarios { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        
+        //Orders related tables
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Ticket> OrderItems { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }
