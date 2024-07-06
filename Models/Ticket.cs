@@ -14,7 +14,13 @@ namespace Ing.Models
 
         public int Amount { get; set; }
         public double Price { get; set; }
-
+        
+        [Display(Name = "Data da compra")]
+        [DataType(DataType.Date)] 
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        public DateOnly DatePurchase { get; set; }
+        
+        //Relationships
         public int MovieId { get; set; }
         [ForeignKey("MovieId")]
         public Movie Movie { get; set; }
@@ -22,15 +28,6 @@ namespace Ing.Models
         public int OrderId { get; set; }
         [ForeignKey("OrderId")]
         public Order Order { get; set; }
-        
-        [Display(Name = "Sessões")]
-        public int SessaoId { get; set; }
-        [ForeignKey("SessaoId")]
-        public Session Session { get; set; }
-       
-        [Display(Name = "Data da compra")]
-        [DataType(DataType.Date)] 
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
-        public DateOnly DatePurchase { get; set; }
+         
     }
 }

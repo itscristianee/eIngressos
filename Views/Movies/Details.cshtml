@@ -1,5 +1,5 @@
 @model Ing.Models.Movie
-
+@*
 @{
     ViewData["Title"] = "Detailhes do movie";
 }
@@ -71,7 +71,7 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-
+*@
 
 
 <div class="row">
@@ -95,11 +95,13 @@
                         <p class="card-text">@Model.Description</p>
                         
                         <p class="card-text">
-                            <b>Producer: </b>
+                            <b>Produtor: </b>
                             @Model.Producer
                             
                         </p>
                         <p class="card-text"><b>Categoria: </b>@Model.Category</p>
+                        <p class="card-text"><b>Duração: </b>@Model.Duration</p>
+                        <p class="card-text"><b>Idade: </b>@Model.AgeRating</p>
                         <p class="card-text"><b>Inicio de exibição: </b>@Model.StartDate.ToString("dd MMM yy")</p>
                         <p class="card-text"><b>Fim de exibição: </b>@Model.EndDate.ToString("dd MMM yy")</p>
                         <p class="card-text ">

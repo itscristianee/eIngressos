@@ -1,4 +1,5 @@
 using Ing.Data;
+using Ing.Data.Cart;
 using Microsoft.AspNetCore.Identity;
 
 
@@ -14,9 +15,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-
-
-
+// Register ShoppingCart
+builder.Services.AddScoped<ShoppingCart>();
+builder.Services.AddSession();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddControllersWithViews();
@@ -35,7 +36,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(

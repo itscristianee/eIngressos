@@ -35,11 +35,6 @@ namespace Ing.Models
 
         public string Producer { get; set; }
         
-        
-        /*Enum tipo filme categoria
-             Tipo de valor definido pelo usuário usado para representar uma
-             lista de constantes inteiras nomeadas
-        */
         [Display(Name = "Categoria")]
         [Required]
         public MovieCategory Category { get; set; }
@@ -57,11 +52,18 @@ namespace Ing.Models
         [Required(ErrorMessage = "O {0} é obrigatória.")]
         [RegularExpression("[0-9]+[.,]?[0-9]{0,2}", ErrorMessage = "Digitos numéricos separados por , ou .")]
         public double Price { get; set; }
-        //Relacionamento entre tabelas
+        //Relationship between tables
+        
+        [Display(Name = "Sessões")]
+
+        public ICollection<Session> Sessions { get; set; }
+
         
         //Actor e Movie
         [Display(Name ="Actores")]
         public ICollection<ActorMovie> ActorsMovies { get; set; }
+        
+        
 
         
     }

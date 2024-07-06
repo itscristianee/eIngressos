@@ -30,14 +30,14 @@ namespace Ing.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var actor = await _context.Actors
                 .FirstOrDefaultAsync(m => m.ActorId == id);
             if (actor == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(actor);
@@ -54,7 +54,7 @@ namespace Ing.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Bio,ProfilePicture")] Actor actor)
+        public async Task<IActionResult> Create([Bind("ActorId,Name,Bio,ProfilePicture")] Actor actor)
         {
             if (ModelState.IsValid)
             {
@@ -70,13 +70,13 @@ namespace Ing.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var actor = await _context.Actors.FindAsync(id);
             if (actor == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
             return View(actor);
         }
@@ -90,7 +90,7 @@ namespace Ing.Controllers
         {
             if (id != actor.ActorId)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             if (ModelState.IsValid)
@@ -104,7 +104,7 @@ namespace Ing.Controllers
                 {
                     if (!ActorExists(actor.ActorId))
                     {
-                        return NotFound();
+                        return View("NotFound");
                     }
                     else
                     {
@@ -121,14 +121,14 @@ namespace Ing.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var actor = await _context.Actors
                 .FirstOrDefaultAsync(m => m.ActorId == id);
             if (actor == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(actor);
