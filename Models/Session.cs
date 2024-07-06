@@ -5,22 +5,21 @@ namespace Ing.Models;
 public class Session
 {
     [Key]
-    public int SessaoId { get; set; }  // Chave primária única para cada sessão
+    public int SessaoId { get; set; }
 
 
     [Required]
-    [DataType(DataType.Date)] // informa a View de como deve tratar este atributo
+    [DataType(DataType.Date)] 
     [DisplayFormat(ApplyFormatInEditMode = true,
                      DataFormatString = "{0:dd-MM-yyyy}")]
-    public DateOnly Data { get; set; }  // Data e hora de início da sessão
+    public DateOnly Data { get; set; }  
 
     [Required]
-    public TimeOnly Hora { get; set; }     // Data e hora de fim da sessão
+    public TimeOnly Hora { get; set; }     
 
 
     [Display(Name = "Capacidade")]
-    public int NLugares { get; set; }  // o n° de lugares
-    //Relacionamento entre tabelas
+    public int QuantitySits { get; set; }  
     
     //Movie e sessao
     [Display(Name = "Movie")]
@@ -28,7 +27,6 @@ public class Session
     public int MovieId { get; set; }
     public Movie Movie { get; set; }
     
-    public ICollection<Ticket> Tickets { get; set; }
 
 
 }
