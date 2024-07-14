@@ -1,0 +1,108 @@
+@model eIngressos.Models.TicketPurchaseViewModel
+
+@{
+    ViewData["Title"] = "Purchase Ticket";
+}
+
+<hr />
+<div class="flex justify-center items-center min-h-screen">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-6 bg-white dark:bg-gray-800 w-4/5 max-w-3xl mx-auto">
+        <div class="text-center mb-6">
+            <h1 class="mb-4 text-xl font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-4xl">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Purchase</span>
+                Ticket
+            </h1>
+            <div class="w-40 h-40 mb-4 mx-auto bg-gray-800 rounded-full">
+                <img id="previewImage" class="object-cover w-full h-full rounded-full" src="" alt="Movie Image">
+            </div>
+        </div>
+        <form asp-action="Purchase" method="post" asp-controller="Tickets" class="max-w-full mx-auto">
+            <div class="form-group mb-5">
+                <label for="movieDropdown" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select
+                    Movie</label>
+                <select id="movieDropdown"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    onchange="getSession()">
+                    <option value="">-- Select Movie --</option>
+                    @foreach (var movie in ViewBag.Movies)
+                    {
+                        <option value="@movie.Value">@movie.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group mb-5">
+                <label asp-for="SessionId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select
+                    Session</label>
+                <select asp-for="SessionId"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                    <option value="">-- Select Session --</option>
+                </select>
+                <span asp-validation-for="SessionId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-5">
+                <label asp-for="Quantity"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantity</label>
+                <input asp-for="Quantity"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-6">
+                @if (User.Identity.IsAuthenticated && ViewBag.UserName != null)
+                {
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User Name</label>
+                    <input type="text" value="@ViewBag.UserName"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                        disabled />
+                }
+                else
+                {
+                    <label asp-for="UserId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User ID
+                        (optional)</label>
+                    <input asp-for="UserId"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                }
+            </div>
+            <div class="flex justify-between">
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Purchase</button>
+                <button type="button" onclick="location.href='@Url.Action("Index", "Movies")'"
+                    class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 ml-4">Back
+                    to List</button>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        function getSession() {
+            let movieId = $('#movieDropdown').val();
+            let sessionDropdown = $('select[name="SessionId"]');
+
+            if (movieId) {
+                $.ajax({
+                    url: '/Tickets/GetSessions/' + movieId,
+                    type: 'GET',
+                    success: function (data) {
+                        sessionDropdown.empty();
+                        sessionDropdown.append('<option value="">-- Select Session --</option>');
+
+                        $.each(data.sessions, function (index, session) {
+                            sessionDropdown.append('<option value="' + session.id + '">' + session.sessionDateTime + '</option>');
+                        });
+
+                        $('#previewImage').attr('src', data.movieImage).attr('alt', 'Movie Image');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("An error occurred while loading sessions: " + error);
+                    }
+                });
+            } else {
+                sessionDropdown.empty();
+                sessionDropdown.append('<option value="">-- Select Session --</option>');
+                $('#previewImage').attr('src', '').attr('alt', 'Movie Image');
+            }
+        }
+    </script>
+}
