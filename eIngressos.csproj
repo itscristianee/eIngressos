@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="8.0.0-preview.7.23375.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Clients\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clients\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clients\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clients\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clients\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employees\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employees\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employees\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employees\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employees\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Actors\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Actors\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Actors\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Actors\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Actors\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Movies\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Movies\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Movies\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Movies\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Movies\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Tickets\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Tickets\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Tickets\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Tickets\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Tickets\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Api\" />
+  </ItemGroup>
+
+</Project>

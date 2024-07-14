@@ -1,0 +1,79 @@
+@model eIngressos.Models.Tickets
+
+@{
+    ViewData["Title"] = "Purchase Confirmation";
+}
+
+<hr />
+<div class="flex justify-center items-center min-h-screen">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-6 bg-white dark:bg-gray-800 w-4/5 max-w-3xl mx-auto">
+        <div class="text-center mb-6">
+            <h1 class="mb-4 text-xl font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-4xl">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Compra</span>
+                Confirmada
+            </h1>
+        </div>
+        <div>
+            <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Ticket</h4>
+            <hr class="mb-6" />
+            <dl class="grid grid-cols-2 gap-x-4 gap-y-2">
+                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    ID
+                </dt>
+                <dd class="text-sm text-gray-900 dark:text-white">
+                    @Model.Id
+                </dd>
+                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Sold
+                </dt>
+                <dd class="text-sm text-gray-900 dark:text-white">
+                    @Model.Sold
+                </dd>
+                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Price per Ticket
+                </dt>
+                <dd class="text-sm text-gray-900 dark:text-white">
+                    @(Model.Session?.Movie?.Price ?? 0)
+                </dd>
+                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Quantity
+                </dt>
+                <dd class="text-sm text-gray-900 dark:text-white">
+                    @Model.Quantity
+                </dd>
+                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Total Price
+                </dt>
+                <dd class="text-sm text-gray-900 dark:text-white">
+                    @(Model.Quantity * (Model.Session?.Movie?.Price ?? 0))
+                </dd>
+                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Purchase Date
+                </dt>
+                <dd class="text-sm text-gray-900 dark:text-white">
+                    @Model.PurchaseDate
+                </dd>
+                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Session ID
+                </dt>
+                <dd class="text-sm text-gray-900 dark:text-white">
+                    @Model.SessionId
+                </dd>
+            </dl>
+        </div>
+        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+        {
+            <div class="mt-6">
+                <a asp-action="Index"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Back
+                    to List</a>
+            </div>
+        }else{
+            <div class="mt-6">
+                <a asp-controller="Movies" asp-action="Index"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Back
+                    to List</a>
+            </div>
+        }
+    </div>
+</div>
