@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './Header'; // Ensure Header component is in the correct path
+import Footer from './Footer'; // Ensure Footer component is in the correct path
+import FrontOfficeRoutes from './FrontOfficeRoutes'; // Import the routes component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex flex-column min-vh-100">
+      <BrowserRouter>
+      <Header />
+        <FrontOfficeRoutes /> {/* Include your routes here */}
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
